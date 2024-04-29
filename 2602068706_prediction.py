@@ -12,7 +12,7 @@ import pickle
 import joblib
 
 model = joblib.load('XGB_model.pkl')
-features_encoded = joblid.load('features_encoded.pkl')
+features_encoded = joblib.load('features_encoded.pkl')
 
 def main():
     st.title("Churn Prediction - Model Deployment")
