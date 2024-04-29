@@ -46,15 +46,15 @@ def make_prediction(features):
   # Convert features to a 1D array if necessary
     if isinstance(features, dict):
         features = list(features.values())
-    input_array = np.array(features).reshape(1, -1)
     
-    # Check the shape of input_array
-    print("Input array shape:", input_array.shape)
-
+    # Extract numeric values
+    numeric_values = [val for val in features if isinstance(val, (int, float))]
+    input_array = np.array(numeric_values).reshape(1, -1)
+    
     # Check for NaN or infinite values
     if np.isnan(input_array).any() or np.isinf(input_array).any():
         raise ValueError("Input array contains NaN or infinite values")
-
+    
     # Make prediction
     prediction = model.predict(input_array)
     return prediction[0]
