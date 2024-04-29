@@ -43,9 +43,21 @@ def main():
         st.success(f'The Prediction is: {result}')
 
 def make_prediction(features):
-  input_array = np.array(features).reshape(1, -1)
-  prediction = model.predict(input_array)
-  return prediction[0]
+  # Convert features to a 1D array if necessary
+    if isinstance(features, dict):
+        features = list(features.values())
+    input_array = np.array(features).reshape(1, -1)
+    
+    # Check the shape of input_array
+    print("Input array shape:", input_array.shape)
+
+    # Check for NaN or infinite values
+    if np.isnan(input_array).any() or np.isinf(input_array).any():
+        raise ValueError("Input array contains NaN or infinite values")
+
+    # Make prediction
+    prediction = model.predict(input_array)
+    return prediction[0]
 
 if __name__ == '__main__':
   main()
