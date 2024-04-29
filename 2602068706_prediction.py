@@ -23,7 +23,7 @@ def main():
     IsActiveMember = st.radio("Choose status member", ['Active', 'Inactive'])
     HasCrCard = st.radio('Do you have a Credit Card', ['Yes', 'No'])
     CreditScore = st.number_input('Total Credit Score', 0, 1000)
-    EstimatedSalary = st.radio('Number of your estimates salary', )
+    EstimatedSalary = st.radio('Number of your estimated salary', 0, 10000000000)
     Balance = st.number_input('Total Balance', 0, 10000000000)
     NumOfProducts = st.number_input('Number of products', 0, 100)
     
