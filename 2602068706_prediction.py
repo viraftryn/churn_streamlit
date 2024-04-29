@@ -12,8 +12,6 @@ NIM: 2602068706<br>
 MID Exam<br>
 """
 
-!pip install streamlit
-
 import pandas as pd
 import numpy as np
 import streamlit as st
