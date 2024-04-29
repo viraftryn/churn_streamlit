@@ -1,9 +1,9 @@
 # -*- coding: utf-8 -*-
 #### DTSC6012001 - Model Deployment
-Nama: Vira Fitriyani<br>
+"""Nama: Vira Fitriyani<br>
 NIM: 2602068706<br>
 MID Exam<br>
-""
+"""
 
 import pandas as pd
 import numpy as np
